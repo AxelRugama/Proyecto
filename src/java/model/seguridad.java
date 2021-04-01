@@ -12,7 +12,7 @@ package model;
 public class seguridad {
        private String user="Admin";
     private String pass="Admin";
-    private String pruebagit;
+    
 
 
     public String getUser() {
