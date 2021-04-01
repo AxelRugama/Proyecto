@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>MenuPrincipal</title>
+
+    </h:head>
+    <h:body style="padding: 30px;" >
+
+        <b:container>
+            <b:navBar brand="SIPAO" brandHref="MenuPrincipal.xhtml" id="dropMenuExample" contentDisabled="#{navBarBean.navBarDisabled}" >
+
+                <b:navbarLinks contentDisabled="#{navBarBean.navBarLinksDisabled}">
+                    <b:dropMenu  icon-awesome="user-plus" icon-pulse="true" value="Registros" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Registro Cliente" href="registro2.xhtml"></b:navLink>
+                        <b:navLink value="Registro Inventario" href="RegistroProductos.xhtml"></b:navLink>
+                        <b:navLink value="Registro Direcciones Entrega Cliente" href="#"></b:navLink>
+                    </b:dropMenu>
+
+                    <b:navLink icon-awesome="cart-plus" value="Generar Pedidos" href="#"></b:navLink>
+                    <b:navLink icon-awesome="cart-arrow-down" value="Facturacion" href="#"></b:navLink>
+                    <b:navLink icon-awesome="truck" value="despacho" href="#"></b:navLink>
+                    <b:dropMenu icon-awesome="line-chart" value="Reportes" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Pedidos Pendientes" href="#"></b:navLink>
+                        <b:navLink value="Pedidos en Proceso" href="#"></b:navLink>
+                        <b:navLink value="Pedidos Finalizados" href="#"></b:navLink>
+                        <b:navLink value="Reporte ventas a Contado" href="#"></b:navLink>
+                        <b:navLink value="Reporte ventas a Credito" href="#"></b:navLink>
+
+                    </b:dropMenu>
+                   
+                    <b:navLink icon-awesome="laptop" value="Catalogo" href="Catalogo.xhtml"></b:navLink>
+                    <b:dropMenu icon-awesome="lock" value="Gestion" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Creacion Usuario" href="#"></b:navLink>
+                        <b:navLink value="Permisos" href="#"></b:navLink>
+                        <b:navLink value="Aprobaciones Pendientes" href="#"></b:navLink>
+
+
+                    </b:dropMenu>
+                </b:navbarLinks>
+            </b:navBar>
+
+            <h1> </h1>
+            <b:jumbotron>
+                <h1>Alimentos preparados</h1>
+                <p>El mercado Los alimentos preparados libres de gluten está alcanzando rápidamente sus niveles anteriores a COVID y se espera una tasa de crecimiento saludable durante el período de pronóstico impulsada por la recuperación en forma de V en la mayoría de las naciones en desarrollo.</p>
+
+                <p>
+                    <a class="btn btn-lg btn-primary" href="#" role="button"><span>Ver articulo completo</span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                </p>
+            </b:jumbotron>
+        </b:container>
+
+    </h:body>
+</html>

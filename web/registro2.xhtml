@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <title>MenuPrincipal</title>
+
+    </h:head>
+    <h:body style="padding: 30px;">
+        <b:container>
+            <b:navBar brand="SIPAO" brandHref="MenuPrincipal.xhtml" id="dropMenuExample" contentDisabled="#{navBarBean.navBarDisabled}" >
+
+                <b:navbarLinks contentDisabled="#{navBarBean.navBarLinksDisabled}">
+                    <b:dropMenu  icon-awesome="user-plus" icon-pulse="true" value="Registros" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Registro Cliente" href="#"></b:navLink>
+                       
+                        <b:navLink value="Registro Inventario" href="RegistroProductos.xhtml"></b:navLink>
+                        <b:navLink value="Registro Direcciones Entrega Cliente" href="#"></b:navLink>
+                    </b:dropMenu>
+
+                    <b:navLink icon-awesome="cart-plus" value="Generar Pedidos" href="#"></b:navLink>
+                    <b:navLink icon-awesome="cart-arrow-down" value="Facturacion" href="#"></b:navLink>
+                    <b:navLink icon-awesome="truck" value="despacho" href="#"></b:navLink>
+                    <b:dropMenu icon-awesome="line-chart" value="Reportes" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Pedidos Pendientes" href="#"></b:navLink>
+                        <b:navLink value="Pedidos en Proceso" href="#"></b:navLink>
+                        <b:navLink value="Pedidos Finalizados" href="#"></b:navLink>
+                        <b:navLink value="Reporte ventas a Contado" href="#"></b:navLink>
+                        <b:navLink value="Reporte ventas a Credito" href="#"></b:navLink>
+
+                    </b:dropMenu>
+
+                    <b:navLink icon-awesome="laptop" value="Catalogo" href="#"></b:navLink>
+                    <b:dropMenu icon-awesome="lock" value="Gestion" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink value="Creacion Usuario" href="#"></b:navLink>
+                        <b:navLink value="Permisos" href="#"></b:navLink>
+                        <b:navLink value="Aprobaciones Pendientes" href="#"></b:navLink>
+
+
+                    </b:dropMenu>
+                </b:navbarLinks>
+            </b:navBar>
+
+            <h1> </h1>
+            <b:jumbotron >
+                <h2>Registro Clientes</h2>
+                <p>Rellene cada casilla No puede dejar espacios en blanco</p>
+                <b:form>
+                    <b:carousel id="wizard" styleClass="wizardPseudoClass"
+                                style="width:400px; padding-top:20px"
+                                startAnimation="false"
+                                showIndicators="false"
+                                wrap="false">
+                        <b:carouselItem style="width:400px; height:380px">
+                            <b:panel title="Datos Personales" look="primary">
+                                <b:inputText label="Cedula"  />
+                                <b:inputText label="Nombre" />
+                                <b:inputText label="Primer Apellido"  />
+                                <b:inputText label="Segundo Apellido"  />
+                            </b:panel>
+                        </b:carouselItem>
+                        <b:carouselItem style="width:400px;height:230px">
+                            <b:panel title="Contacto" look="danger  ">
+                                <b:inputText   label="Numero de Telefono"  />                                
+                                <b:inputText   label="Correo electronico"  />
+                            </b:panel>
+                        </b:carouselItem>
+                        <b:carouselItem style="width:400px;height:230px">
+                            <b:panel title="Domicilio" look="success">
+                                <h:selectOneMenu >
+                                    <f:selectItem itemValue="provincia"></f:selectItem>
+                                    <f:selectItem itemValue="provincia"></f:selectItem>
+
+                                </h:selectOneMenu>
+                                <h:selectOneMenu >
+                                    <f:selectItem itemValue="canton"></f:selectItem>
+                                    <f:selectItem itemValue="canton"></f:selectItem>
+
+                                </h:selectOneMenu>
+                                <h:selectOneMenu >
+                                    <f:selectItem itemValue="distrito"></f:selectItem>
+                                    <f:selectItem itemValue="distrito"></f:selectItem>
+
+                                </h:selectOneMenu>
+                                <h:selectOneMenu >
+                                    <f:selectItem itemValue="Barrio"></f:selectItem>
+                                    <f:selectItem itemValue="Barrio"></f:selectItem>
+
+                                </h:selectOneMenu>
+                                <b:inputText label="Otras Señas     "     />
+                            </b:panel>
+                        </b:carouselItem>
+
+                        <b:carouselItem style="width:400px;height:230px">
+                            <b:panel title="Finalizar Registro" look="danger  ">
+                                <h:panelGrid columns="3">
+                                    <b:button look="success" value="Guardar"/><b:button look="danger" value="Cancelar"/><b:button look="warning" value="Salir" href="MenuPrincipal.xhtml"/>
+                                </h:panelGrid>
+                            </b:panel>
+                        </b:carouselItem>
+
+                        <b:carouselControl direction="right" >
+                            <b:button value="Anterior"
+                                      onclick="$('.wizardPseudoClass').carousel('prev');$('.wizardPseudoClass').carousel('pause');"
+                                      look="info" />
+                        </b:carouselControl>
+                        <b:carouselControl direction="left">
+                            <b:button value="Siguiente" style="position:absolute;right:0px"
+                                      onclick="$('.wizardPseudoClass').carousel('next');$('.wizardPseudoClass').carousel('pause');"
+                                      look="success" />
+                        </b:carouselControl>
+                    </b:carousel>
+                </b:form>
+            </b:jumbotron>
+        </b:container>
+
+    </h:body>
+</html>

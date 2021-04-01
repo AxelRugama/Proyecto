@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        
+        <title>Ingreso Sipao</title>
+    
+        <style type="text/css">
+            .form-signin {
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: #add;">
+        <b:container>
+           
+            <h1 style="text-align: center">Bienvenidos al Sistema SIPAO</h1>
+            <h:form styleClass="form-signin" prependId="false">
+                <h2 class="form-signin-heading" style="text-align: center">  Iniciar Sesion</h2>
+                <b:inputText id="Usuario" placeholder="Email address" value="#{beanSeguridad.usuario}">
+                    <f:facet name="prepend">
+                        <b:icon name="user" />
+                    </f:facet> 
+                </b:inputText>
+                <b:inputText id="Contraseña" placeholder="Password" type="password" value="#{beanSeguridad.clave}">
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="key" />
+                    </f:facet>
+                </b:inputText>
+                <b:selectBooleanCheckbox value="true" caption="Recuerdame"/>
+                <b:commandButton look="primary btn-block" value="Confirmar" action="#{beanSeguridad.validarDatos}" icon="log-in" size="lg"/>
+                <h:outputText escape="false" value="#{beanSeguridad.error}" class="ptag"></h:outputText>
+            </h:form>
+        </b:container>
+    </h:body>
+</html>
+            
+            
+            
+       
+
+
