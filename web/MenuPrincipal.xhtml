@@ -9,43 +9,43 @@
         <title>MenuPrincipal</title>
 
     </h:head>
-    <h:body style="padding: 30px;" >
-
-        <b:container>
-            <b:navBar brand="SIPAO" brandHref="MenuPrincipal.xhtml" id="dropMenuExample" contentDisabled="#{navBarBean.navBarDisabled}" >
+    <h:body  style="background-image: url(../img/Fruit_Vegetables_Tomatoes_Pepper_Grapes_Onion_512572_3840x2160.jpg); background-size: 100%;padding: 30px;">
+        
+        <b:container >
+            
+            <b:navBar  brand="SIPAO"  brand-style="color: black" style="background-color: lightblue ; font-weight: bold"   brandHref="MenuPrincipal.xhtml" id="dropMenuExample" contentDisabled="#{navBarBean.navBarDisabled}" >
 
                 <b:navbarLinks contentDisabled="#{navBarBean.navBarLinksDisabled}">
-                    <b:dropMenu  icon-awesome="user-plus" icon-pulse="true" value="Registros" contentDisabled="#{navBarBean.dropMenuDisabled}">
-                        <b:navLink value="Registro Cliente" href="registro2.xhtml"></b:navLink>
-                        <b:navLink value="Registro Inventario" href="RegistroProductos.xhtml"></b:navLink>
-                        <b:navLink value="Registro Direcciones Entrega Cliente" href="#"></b:navLink>
+                    <b:dropMenu  style="color: black; background-color: lightblue; font-weight: bold;" icon-awesome="user-plus" icon-pulse="true" value="Registros" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Cliente" href="registro2.xhtml"></b:navLink>
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Inventario" href="RegistroProductos.xhtml"></b:navLink>
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Direcciones Entrega Cliente" href="#"></b:navLink>
                     </b:dropMenu>
 
-                    <b:navLink icon-awesome="cart-plus" value="Generar Pedidos" href="#"></b:navLink>
-                    <b:navLink icon-awesome="cart-arrow-down" value="Facturacion" href="#"></b:navLink>
-                    <b:navLink icon-awesome="truck" value="despacho" href="#"></b:navLink>
-                    <b:dropMenu icon-awesome="line-chart" value="Reportes" contentDisabled="#{navBarBean.dropMenuDisabled}">
-                        <b:navLink value="Pedidos Pendientes" href="#"></b:navLink>
-                        <b:navLink value="Pedidos en Proceso" href="#"></b:navLink>
-                        <b:navLink value="Pedidos Finalizados" href="#"></b:navLink>
-                        <b:navLink value="Reporte ventas a Contado" href="#"></b:navLink>
-                        <b:navLink value="Reporte ventas a Credito" href="#"></b:navLink>
+                    <b:navLink style="color: black"  icon-awesome="cart-plus" value="Generar Pedidos" href="#"></b:navLink>
+                    <b:navLink style="color: black"  icon-awesome="cart-arrow-down" value="Facturacion" href="#"></b:navLink>
+                    <b:navLink  style="color: black"  icon-awesome="truck" value="despacho" href="#"></b:navLink>
+                    <b:dropMenu  style="color: black" icon-awesome="line-chart" value="Reportes" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black" value="Pedidos Pendientes" href="#"></b:navLink>
+                        <b:navLink style="color: black" value="Pedidos en Proceso" href="#"></b:navLink>
+                        <b:navLink style="color: black" value="Pedidos Finalizados" href="#"></b:navLink>
+                        <b:navLink  style="color: black" value="Reporte ventas a Contado" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Reporte ventas a Credito" href="#"></b:navLink>
 
                     </b:dropMenu>
                    
-                    <b:navLink icon-awesome="laptop" value="Catalogo" href="Catalogo.xhtml"></b:navLink>
-                    <b:dropMenu icon-awesome="lock" value="Gestion" contentDisabled="#{navBarBean.dropMenuDisabled}">
-                        <b:navLink value="Creacion Usuario" href="#"></b:navLink>
-                        <b:navLink value="Permisos" href="#"></b:navLink>
-                        <b:navLink value="Aprobaciones Pendientes" href="#"></b:navLink>
+                    <b:navLink style="color: black"  icon-awesome="laptop" value="Catalogo" href="Catalogo.xhtml"></b:navLink>
+                    <b:dropMenu style="color: black"  icon-awesome="lock" value="Gestion" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black"  value="Creacion Usuario" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Permisos" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Aprobaciones Pendientes" href="#"></b:navLink>
 
 
                     </b:dropMenu>
                 </b:navbarLinks>
             </b:navBar>
 
-            <h1> </h1>
-            <b:jumbotron>
+            <b:jumbotron style="background-color: white; opacity: .6; ">
                 <h1>Alimentos preparados</h1>
                 <p>El mercado Los alimentos preparados libres de gluten está alcanzando rápidamente sus niveles anteriores a COVID y se espera una tasa de crecimiento saludable durante el período de pronóstico impulsada por la recuperación en forma de V en la mayoría de las naciones en desarrollo.</p>
 
