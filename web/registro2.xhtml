@@ -66,26 +66,23 @@
                         </b:carouselItem>
                         <b:carouselItem style="width:400px;height:230px">
                             <b:panel title="Domicilio" look="success">
-                                <h:selectOneMenu >
-                                    <f:selectItem itemValue="provincia"></f:selectItem>
-                                    <f:selectItem itemValue="provincia"></f:selectItem>
-
+                                 <h:selectOneMenu label="pro" value="#{beanProvincias.cod_provincia}" id="pro">
+                                    <f:selectItems value="#{beanProvincias.listaPro}"/>
+                                    <f:ajax event="change" listener="#{beanProvincias.getListaCan()}" render="can" execute="@this"/>
+                                    <f:ajax event="change" listener="#{beanProvincias.getListaDis()}" render="dis" execute="@this"/>
+                                    <f:ajax event="change" listener="#{beanProvincias.getListaBar()}" render="bar" execute="@this"/>
                                 </h:selectOneMenu>
-                                <h:selectOneMenu >
-                                    <f:selectItem itemValue="canton"></f:selectItem>
-                                    <f:selectItem itemValue="canton"></f:selectItem>
-
+                                <h:selectOneMenu label="can" value="#{beanProvincias.cod_canton}" id="can">
+                                   <f:selectItems value="#{beanProvincias.listaCan}"/>
+                                   <f:ajax event="change" listener="#{beanProvincias.getListaDis()}" render="dis" execute="@this"/>
                                 </h:selectOneMenu>
-                                <h:selectOneMenu >
-                                    <f:selectItem itemValue="distrito"></f:selectItem>
-                                    <f:selectItem itemValue="distrito"></f:selectItem>
-
-                                </h:selectOneMenu>
-                                <h:selectOneMenu >
-                                    <f:selectItem itemValue="Barrio"></f:selectItem>
-                                    <f:selectItem itemValue="Barrio"></f:selectItem>
-
-                                </h:selectOneMenu>
+                                <h:selectOneMenu label="dis" value="#{beanProvincias.cod_distrito}" id="dis">
+                                   <f:selectItems value="#{beanProvincias.listaDis}"/>
+                                   <f:ajax event="change" listener="#{beanProvincias.getListaBar()}" render="bar" execute="@this"/>
+                               </h:selectOneMenu>
+                                <h:selectOneMenu label="dis" value="#{beanProvincias.cod_barrio}" id="bar">
+                                  <f:selectItems value="#{beanProvincias.listaBar}"/>
+                               </h:selectOneMenu>
                                 <b:inputText label="Otras Señas     "     />
                             </b:panel>
                         </b:carouselItem>
