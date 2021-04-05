@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"   
+      xmlns:p="http://primefaces.org/ui">
+    
+    
+    
+    <h:head>
+        <title>MenuPrincipal</title>
+
+    </h:head>
+    <h:body  style="background-image: url(../img/frutas3.jpg); background-size: 100%;padding: 30px;">
+        
+        <b:container >
+            
+            <b:navBar  brand="SIPAO"  brand-style="color: black" style="background-color: lightblue ; font-weight: bold"   brandHref="MenuPrincipal.xhtml" id="dropMenuExample" contentDisabled="#{navBarBean.navBarDisabled}" >
+              
+                <b:navbarLinks contentDisabled="#{navBarBean.navBarLinksDisabled}">
+                    <b:dropMenu  style="color: black; background-color: lightblue; font-weight: bold;" icon-awesome="user-plus" icon-pulse="true" value="Registros" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Cliente" href="registro2.xhtml"></b:navLink>
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Inventario" href="RegistroProductos.xhtml"></b:navLink>
+                        <b:navLink style="color: black; background-color: lightblue" value="Registro Direcciones Entrega Cliente" href="#"></b:navLink>
+                    </b:dropMenu>
+
+                    <b:navLink style="color: black"  icon-awesome="cart-plus" value="Generar Pedidos" href="#"></b:navLink>
+                    <b:navLink style="color: black"  icon-awesome="cart-arrow-down" value="Facturacion" href="#"></b:navLink>
+                    <b:navLink  style="color: black"  icon-awesome="truck" value="despacho" href="#"></b:navLink>
+                    <b:dropMenu  style="color: black" icon-awesome="line-chart" value="Reportes" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black" value="Pedidos Pendientes" href="#"></b:navLink>
+                        <b:navLink style="color: black" value="Pedidos en Proceso" href="#"></b:navLink>
+                        <b:navLink style="color: black" value="Pedidos Finalizados" href="#"></b:navLink>
+                        <b:navLink  style="color: black" value="Reporte ventas a Contado" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Reporte ventas a Credito" href="#"></b:navLink>
+
+                    </b:dropMenu>
+                   
+                    <b:navLink style="color: black"  icon-awesome="laptop" value="Catalogo" href="Catalogo.xhtml"></b:navLink>
+                    <b:dropMenu style="color: black"  icon-awesome="lock" value="Gestion" contentDisabled="#{navBarBean.dropMenuDisabled}">
+                        <b:navLink style="color: black"  value="Creacion Usuario" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Permisos" href="#"></b:navLink>
+                        <b:navLink style="color: black"  value="Aprobaciones Pendientes" href="#"></b:navLink>
+                    </b:dropMenu>
+                </b:navbarLinks>
+            </b:navBar>
+            <b:jumbotron style="background-color: white">
+                <h:form >   
+                        <h:outputText value="Cliente: "/>
+                        <h:inputText class="inputTodos" disabled="true" style="margin-left: 10px; background: transparent; width: 250px; text-align: center;" value="#{beanLogin.id}"/> 
+                        <h:commandButton class="buttonTodos" style="margin-left: 1000px;" action="Pedidos.xhtml" value="Volver"/>                   
+                  
+               
+                <div class="col-md-4 col">
+                    <h:form > 
+                        <br></br>
+                        <h3>Direcciones de Entrega</h3>
+                        <br></br>
+                        <h:outputText value="Direcciones: "/>
+                        <h:selectOneMenu class="inputTodos" value="#{beanDirecciones.idDireccion}">
+                            <f:selectItems value="#{beanDirecciones.ListaDirecciones(beanLogin.id)}" />
+                        </h:selectOneMenu>
+                        <br></br>
+                        <h:commandButton class="buttonAdmin" value="Modificar" action="#{beanDirecciones.ModificarDireccion}"/>
+                        <h:commandButton class="buttonAdmin" value="Eliminar" action="#{beanDirecciones.EliminarDireccion}"/>
+                        <br/>
+                        <br/>
+                        <h5><strong><h:outputText value="#{beanDirecciones.errorDireccion}"/></strong></h5>
+                        <br/>
+                        <br/>
+                        <h5>Modificar Direccion</h5>
+                        <h:outputText value="Direccion: "/>
+                        <h:inputText class="inputTodos" value="#{beanDirecciones.direcObject.direccion}"/>
+                        <h:commandButton class="buttonAdmin" value="Guardar Cambios" action="#{beanDirecciones.GuardarCambios}"/>
+                        <br></br>
+                        <br></br> 
+                        <h5>Agregar Nueva Direccion</h5>
+                        <h:outputText value="Direccion Exacta: "/>
+                        <h:inputText class="inputTodos" value="#{beanDirecciones.direccion}"/>
+                        <h:commandButton class="buttonAdmin" value="Agregar" action="#{beanDirecciones.agregarDireccion(beanLogin.id)}"/>
+                        <br></br>
+                        <br></br> 
+                        <h5>Activar Direcciones</h5>
+                        <h:outputText value="Direcciones Inactivas: "/>
+                        <h:selectOneMenu class="inputTodos" value="#{beanDirecciones.idDirecInactiva}">
+                            <f:selectItems value="#{beanDirecciones.ListaDireccionesI(beanLogin.id)}" />
+                        </h:selectOneMenu>
+                        <h:commandButton class="buttonAdmin" value="Activar" action="#{beanDirecciones.ActivarDireccion}"></h:commandButton>
+                    </h:form>    
+                </div>
+                
+                <div class="col-md-4 col">
+                    <h:form >
+                    <br></br>
+                    <h3>Horarios de Entrega</h3>
+                    <br></br>
+                    <h:outputText value="Horarios: "/>
+                    <h:selectOneMenu class="inputTodos" value="#{beanHorarios.idHorario}">
+                        <f:selectItems value="#{beanHorarios.ListaHorarios(beanLogin.id)}" />
+                    </h:selectOneMenu>
+                    <br></br>
+                    <h:commandButton class="buttonAdmin" value="Modificar" action="#{beanHorarios.ModificarHorario()}"/>
+                    <h:commandButton class="buttonAdmin" value="Eliminar" action="#{beanHorarios.EliminarHorario()}"/>
+                        <br/>
+                        <br/>
+                        <h5><strong><h:outputText value="#{beanHorarios.error}"/></strong></h5>
+                        <br/>
+                        <br/>
+                        <h5>Modificar Horario</h5>
+                        <h:outputText value="Horario: "/>
+                        <h:inputText class="inputTodos" value="#{beanHorarios.horarioObject.horario}"/>
+                        <h:commandButton class="buttonAdmin" value="Guardar Cambios" action="#{beanHorarios.GuardarCambios()}"/>
+                        <br></br>
+                        <br></br> 
+                        <h5>Agregar Nuevo Horario</h5>
+                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true" />
+                        <h:panelGrid columns="3" cellpadding="2"> 
+                            <h:outputText value="Horario: "/>
+                            <p:calendar id="time" timeOnly="true" value="#{beanHorarios.horarioT}" pattern="HH:mm a" style="font-size: 12px;"/>
+                            <h:commandButton class="buttonAdmin" value="Agregar" action="#{beanHorarios.AgregarHorario(beanLogin.id)}"/>
+                        </h:panelGrid>
+                        <p:dialog modal="true" resizable="false" header="Values" widgetVar="dlg" showEffect="fold">
+                            <p:panelGrid id="display" columns="2" columnClasses="label,value">
+                                <h:outputText value="Time:" />
+                                <h:outputText value="#{beanHorarios.horarioT}">
+                                    <f:convertDateTime pattern="HH:mm a" />
+                                </h:outputText>
+                            </p:panelGrid>
+                        </p:dialog>
+                    </h:form>
+                     </div>
+                         </h:form> 
+            </b:jumbotron>
+        </b:container>
+        
+    </h:body>
+</html> 
+
