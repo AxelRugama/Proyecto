@@ -25,6 +25,10 @@ import javax.faces.model.SelectItem;
 public class beanDirecciones implements Serializable {
 String idUsuario;
         String direccion;
+        private String provincia;
+        private String Canton;
+        private String distrito;
+        private String barrio;        
         int idDireccion;
         int estado;
         int idDirecInactiva;
@@ -208,6 +212,62 @@ String idUsuario;
 
     public void setDirecObject(Direcciones direcObject) {
         this.direcObject = direcObject;
+    }
+
+    /**
+     * @return the provincia
+     */
+    public String getProvincia() {
+        return provincia;
+    }
+
+    /**
+     * @param provincia the provincia to set
+     */
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    /**
+     * @return the Canton
+     */
+    public String getCanton() {
+        return Canton;
+    }
+
+    /**
+     * @param Canton the Canton to set
+     */
+    public void setCanton(String Canton) {
+        this.Canton = Canton;
+    }
+
+    /**
+     * @return the distrito
+     */
+    public String getDistrito() {
+        return distrito;
+    }
+
+    /**
+     * @param distrito the distrito to set
+     */
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
+    }
+
+    /**
+     * @return the barrio
+     */
+    public String getBarrio() {
+        return barrio;
+    }
+
+    /**
+     * @param barrio the barrio to set
+     */
+    public void setBarrio(String barrio) {
+        this.barrio = barrio;
     }
     
     
