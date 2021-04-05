@@ -3,8 +3,6 @@ package Model;
 
 import DAO.AccesoDatos;
 import DAO.SNMPExceptions;
-import controlador.beanDirecciones;
-import controlador.beanUsuarios;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
