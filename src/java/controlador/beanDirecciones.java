@@ -6,6 +6,8 @@
 package controlador;
 
 import DAO.SNMPExceptions;
+import Model.Direcciones;
+import Model.DireccionesDB;
 import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -23,7 +25,7 @@ import javax.faces.model.SelectItem;
 @Named(value = "beanDirecciones")
 @SessionScoped
 public class beanDirecciones implements Serializable {
-String idUsuario;
+        String idUsuario;
         String direccion;
         private String provincia;
         private String Canton;
@@ -98,7 +100,7 @@ String idUsuario;
                  }
              }
          estado = 1;
-         Direcciones direc = new Direcciones(id, direccion, estado);
+         Direcciones direc = new Direcciones(id, direccion, estado,Canton,barrio,distrito,provincia);
          
          DireccionesDB direcDB = new DireccionesDB();
          direcDB.AgregarDireccion(direc);

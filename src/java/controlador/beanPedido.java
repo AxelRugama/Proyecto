@@ -6,6 +6,14 @@
 package controlador;
 
 import DAO.SNMPExceptions;
+import Model.Factura;
+import Model.FacturaDB;
+import Model.LineaDetalle;
+import Model.LineaDetalleDB;
+import Model.Pedidos;
+import Model.PedidosDB;
+import Model.Producto;
+import Model.ProductoDB;
 import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -63,7 +71,7 @@ public class beanPedido implements Serializable {
     int idFacturaMostrar;
     String alertaMostrar;
     
-    public beanPedidos() {
+    public beanPedido() {
         
     }
     

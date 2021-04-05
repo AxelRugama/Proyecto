@@ -6,6 +6,8 @@
 package controlador;
 
 import DAO.SNMPExceptions;
+import Model.Producto;
+import Model.ProductoDB;
 import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;

@@ -6,6 +6,7 @@
 package controlador;
 
 import DAO.SNMPExceptions;
+import Model.FacturaDB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;

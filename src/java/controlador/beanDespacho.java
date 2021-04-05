@@ -16,6 +16,12 @@ import java.util.Date;
 import java.util.LinkedList;
 import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
+import model.Despacho;
+import Model.Usuario;
+import Model.Factura;
+import Model.FacturaDB;
+import Model.UsuarioDB;
+import model.DespachoDB;
 
 /**
  *

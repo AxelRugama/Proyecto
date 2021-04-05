@@ -6,6 +6,8 @@
 package controlador;
 
 import DAO.SNMPExceptions;
+import Model.Usuario;
+import Model.UsuarioDB;
 import java.io.IOException;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -268,7 +270,7 @@ String identidad;
     public void agregarCliente() throws SNMPExceptions, SQLException, NamingException, ClassNotFoundException, IOException {
         rol = 3;
         estado = 2;
-        Usuario u = new Usuario(ident, nombre, apellido, pass, rol, estado);
+        Usuario u = new Usuario(ident, nombre, apellido,Correo,telefono, pass, rol, estado);
         UsuarioDB usuarioDB = new UsuarioDB();
 
         if (this.ident.equals("") || this.nombre.equals("") || this.apellido.equals("")
@@ -308,7 +310,7 @@ String identidad;
     public void agregarUsuario() throws SNMPExceptions, SQLException, NamingException, ClassNotFoundException, IOException {
         rol = 1;
         estado = 1;
-        Usuario u = new Usuario(ident, nombre, apellido, pass, rol, estado);
+        Usuario u = new Usuario(ident, nombre, apellido,Correo,telefono, pass, rol, estado);
         UsuarioDB usuarioDB = new UsuarioDB();
 
         if (this.ident.equals("") || this.nombre.equals("") || this.apellido.equals("")
