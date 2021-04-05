@@ -26,6 +26,8 @@ String identidad;
     String ident;
     String nombre;
     String apellido;
+    String telefono;
+    String Correo;
     String pass;
     String pass2;
     String error;
@@ -50,10 +52,11 @@ String identidad;
     public void insertarUsuario() throws SNMPExceptions, SQLException, NamingException, ClassNotFoundException, IOException {
         rol = 3;
         estado = 2;
-        Usuario u = new Usuario(ident, nombre, apellido, pass, rol, estado);
+        Usuario u = new Usuario(ident, nombre, apellido, telefono,Correo,pass, rol, estado);
         UsuarioDB usuarioDB = new UsuarioDB();
         if (this.ident.equals("") || this.nombre.equals("") || this.apellido.equals("")
-                || this.pass.equals("") || this.pass2.equals("")) {
+                               || this.telefono.equals("") || this.Correo.equals("") 
+                               || this.pass.equals("") || this.pass2.equals("")) {
             this.setMensaje("Debe completar los campos.");
             return;
         }
